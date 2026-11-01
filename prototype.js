@@ -39,6 +39,6 @@ function productDetails(p){
 }
 document.querySelectorAll('.open').forEach(b=>b.onclick=()=>productDetails(products.find(p=>p.id===b.closest('.card').dataset.id)));
 $('#nav-exhibition').onclick=e=>{e.preventDefault();$('#enter').click();};
-$('#about').onclick=e=>{e.preventDefault();show('<h2 id="detail-title">關於物件百貨</h2><p>收藏 jaylooloomi 製作的開源產品，從 AI 開發、會議記錄到桌面小工具，讓想法成為可以使用的東西。</p><p>產品主視覺參考各 README 的原始圖片生成；詳情同時保留來源圖片與使用說明。</p>');};
+$('#about').onclick=e=>{e.preventDefault();show('<h2 id="detail-title">關於有空製造所</h2><p>由 Arthur Wang 製作的開源工具，從 AI 開發、會議紀錄到桌面陪伴，讓工具接手重複工作，把時間留給值得親自做的事。</p><p>產品主視覺參考各 README 的原始圖片生成；詳情同時保留來源圖片與使用說明。</p>');};
 $('.close').onclick=()=>$('#detail').close();
 update();
