@@ -1,0 +1,42 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>物件百貨 — Arthur Wang 的開源產品展覽</title><meta name="description" content="探索 Arthur Wang 製作的開源產品：AI 開發、會議記錄、額度監控與桌面工具。">
+<link rel="stylesheet" href="prototype.css">
+<header><a href="#"><b>物件百貨 <small>／ OBJECT DEPT.</small></b></a><nav><a href="#products">所有產品</a><a href="#exhibition" id="nav-exhibition">主題展覽</a><a href="#about" id="about">關於</a></nav><div class="header-search"><span class="search-icon" aria-hidden="true"></span><input id="global-search" placeholder="搜尋產品、主題或關鍵字…" aria-label="全站搜尋"><button class="search-submit round-arrow" aria-label="查看搜尋結果"><svg viewBox="0 0 32 24" aria-hidden="true" focusable="false"><path d="M3 12h25m-7-6 7 6-7 6"/></svg></button></div></header>
+<main><section class="hero"><div class="intro"><h1>把想法，<br>做成可以<br><span class="red">使用的東西。</span></h1><p>精選來自獨立創作者的數位工具、模板與實驗作品，讓靈感真正走進你的日常。</p><a class="primary" href="#products"><span class="circle round-arrow" aria-hidden="true"><svg viewBox="0 0 32 24" aria-hidden="true" focusable="false"><path d="M3 12h25m-7-6 7 6-7 6"/></svg></span>探索所有產品</a></div><section class="feature" id="exhibition" aria-label="主題展覽">
+ <img class="exhibition-art" src="hero-options/with-products/exhibition-01.png" alt="章魚策展人：章魚角色、產品情境展框與暖白紅色雕塑">
+ <div class="exhibition-copy" id="exhibition-panel" role="tabpanel" aria-labelledby="exhibition-tab-0">
+  <p class="exhibition-eyebrow">主題展覽 <span id="exhibition-number">01</span></p>
+  <h2><span id="exhibition-title">生成的形狀</span><span id="exhibition-english" lang="en">The Next Form</span></h2>
+  <p id="exhibition-subtitle">當創意遇上生成時代，<br>我們如何重新定義「作品」？</p>
+  <div class="exhibition-curator"><p>策展人 <span id="exhibition-curator">Arthur Wang</span></p><p id="exhibition-note">從自動開發、會議記錄到桌面工具，<br>本次展覽精選 5 件讓想法走進日常的<br>開源產品。</p></div>
+  <button class="exhibition-link" id="enter">進入展覽 <span aria-hidden="true">→</span></button>
+ </div>
+ <p class="exhibition-motto" lang="en">A<br>MORE<br>USABLE<br>TOMORROW</p>
+ <div class="exhibition-tabs" role="tablist" aria-label="選擇主題展覽"><button id="exhibition-tab-0" role="tab" aria-selected="true" aria-controls="exhibition-panel" tabindex="0" data-slide="0">01</button><button id="exhibition-tab-1" role="tab" aria-selected="false" aria-controls="exhibition-panel" tabindex="-1" data-slide="1">02</button><button id="exhibition-tab-2" role="tab" aria-selected="false" aria-controls="exhibition-panel" tabindex="-1" data-slide="2">03</button></div>
+</section></section>
+<section id="products"><div class="toolbar"><b>探索產品</b><label class="product-search"><span class="search-icon" aria-hidden="true"></span><input id="search" placeholder="搜尋你需要的工具…" aria-label="搜尋產品"></label><div class="chips" id="categories"></div><select id="sort" aria-label="產品排序"><option value="default">精選順序</option><option value="category">類別排序</option><option value="name">名稱排序</option></select><small id="count" aria-live="polite"></small></div><div class="grid"><article class="card" data-id="i-want-to-sleep" data-category="AI 開發" data-order="1">
+ <div class="product-visual"><img src="products/i-want-to-sleep-marketplace-v2.png" alt="i-want-to-sleep 產品情境示意圖，參考 README 原圖生成"><span class="product-badge product-badge--opensource">開源</span></div>
+ <div class="card-copy"><h3>i-want-to-sleep</h3><p>你安心休息，讓 AI 接手開發、測試與改善，醒來檢閱成果。</p><p class="product-highlight"><span aria-hidden="true">✦</span><span>設定接手時間，讓 AI 持續開發，回來一次檢閱分支與測試成果。</span></p></div>
+ <footer><small><span class="tag">#AI 代理</span><span class="tag">#自動開發</span><span class="tag">#夜間接手</span></small><div class="card-actions"><a class="card-github" href="https://github.com/jaylooloomi/i-want-to-sleep" target="_blank" rel="noopener noreferrer" aria-label="i-want-to-sleep GitHub（另開分頁）" title="查看 GitHub">GitHub ↗</a><button class="open" aria-label="開啟產品：i-want-to-sleep">開啟產品 <span aria-hidden="true">→</span></button></div></footer>
+</article>
+<article class="card" data-id="i-want-to-duck-meeting" data-category="生產力" data-order="2">
+ <div class="product-visual"><img src="products/i-want-to-duck-meeting-marketplace-v2.png" alt="Duck Meeting 產品情境示意圖，參考 README 原圖生成"><span class="product-badge product-badge--opensource">開源</span></div>
+ <div class="card-copy"><h3>Duck Meeting</h3><p>留下會議逐字稿與錄音，讓 AI 整理重點、決議與待辦。</p><p class="product-highlight"><span aria-hidden="true">✦</span><span>免額外 API Token，沿用已登入的 Codex／Claude Code 整理逐字稿與會議重點。</span></p></div>
+ <footer><small><span class="tag">#會議紀錄</span><span class="tag">#語音轉文字</span><span class="tag">#AI 摘要</span></small><div class="card-actions"><a class="card-github" href="https://github.com/jaylooloomi/i-want-to-duck-meeting" target="_blank" rel="noopener noreferrer" aria-label="Duck Meeting GitHub（另開分頁）" title="查看 GitHub">GitHub ↗</a><button class="open" aria-label="開啟產品：Duck Meeting">開啟產品 <span aria-hidden="true">→</span></button></div></footer>
+</article>
+<article class="card" data-id="quota-pebble" data-category="桌面工具" data-order="3">
+ <div class="product-visual"><img src="products/quota-pebble-marketplace-v2.png" alt="Quota Pebble 產品情境示意圖，參考 README 原圖生成"><span class="product-badge product-badge--opensource">開源</span></div>
+ <div class="card-copy"><h3>Quota Pebble</h3><p>掌握多個 AI 服務的剩餘額度與使用節奏，讓桌面小夥伴陪你工作。</p><p class="product-highlight"><span aria-hidden="true">✦</span><span>Claude、Codex、Gemini／Antigravity 額度，一個桌面浮島就能掌握。</span></p></div>
+ <footer><small><span class="tag">#額度監控</span><span class="tag">#桌面工具</span><span class="tag">#AI 服務</span></small><div class="card-actions"><a class="card-github" href="https://github.com/jaylooloomi/quota-pebble" target="_blank" rel="noopener noreferrer" aria-label="Quota Pebble GitHub（另開分頁）" title="查看 GitHub">GitHub ↗</a><button class="open" aria-label="開啟產品：Quota Pebble">開啟產品 <span aria-hidden="true">→</span></button></div></footer>
+</article>
+<article class="card" data-id="before-you-do" data-category="生產力" data-order="4">
+ <div class="product-visual"><img src="products/before-you-do-marketplace-v2.png" alt="before-you-do 產品情境示意圖，參考 README 原圖生成"><span class="product-badge product-badge--opensource">開源</span></div>
+ <div class="card-copy"><h3>before-you-do</h3><p>快速加入常用 AI 指令，打包文字、圖片與檔案，讓提問更完整。</p><p class="product-highlight"><span aria-hidden="true">✦</span><span>免 API 金鑰，Alt+H 快貼常用指令，任務素材也能在本機打包。</span></p></div>
+ <footer><small><span class="tag">#快捷指令</span><span class="tag">#提示詞</span><span class="tag">#素材整理</span></small><div class="card-actions"><a class="card-github" href="https://github.com/jaylooloomi/before-you-do" target="_blank" rel="noopener noreferrer" aria-label="before-you-do GitHub（另開分頁）" title="查看 GitHub">GitHub ↗</a><button class="open" aria-label="開啟產品：before-you-do">開啟產品 <span aria-hidden="true">→</span></button></div></footer>
+</article>
+<article class="card" data-id="just-build-it" data-category="AI 開發" data-order="5">
+ <div class="product-visual"><img src="products/just-build-it-marketplace-v2.png" alt="just-build-it 產品情境示意圖，參考 README 原圖生成"><span class="product-badge product-badge--opensource">開源</span></div>
+ <div class="card-copy"><h3>just-build-it</h3><p>讓 AI 持續打造可獨立開關與刪除的功能，再由你挑選留下。</p><p class="product-highlight"><span aria-hidden="true">✦</span><span>每個新功能都能獨立開關與移除，先試用，再決定留下。</span></p></div>
+ <footer><small><span class="tag">#自動開發</span><span class="tag">#功能探索</span><span class="tag">#模組化</span></small><div class="card-actions"><a class="card-github" href="https://github.com/jaylooloomi/just-build-it" target="_blank" rel="noopener noreferrer" aria-label="just-build-it GitHub（另開分頁）" title="查看 GitHub">GitHub ↗</a><button class="open" aria-label="開啟產品：just-build-it">開啟產品 <span aria-hidden="true">→</span></button></div></footer>
+</article></div><div id="empty" hidden>找不到符合的產品。<button id="reset">清除搜尋與分類</button></div></section></main><div id="notice">產品資料來自作者的 GitHub README；卡片主視覺為參考原圖生成的情境插畫。 <a href="wireframe.svg">Wireframe</a> · <a href="wireflow.svg">Wireflow</a></div>
+<dialog id="detail" aria-labelledby="detail-title"><button class="close" type="button" aria-label="關閉詳情"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 5 14 14M19 5 5 19"/></svg></button><div id="detail-body"></div></dialog>
+<script src="products/product-data.js"></script><script src="prototype.js"></script><script src="exhibition.js"></script></html>
