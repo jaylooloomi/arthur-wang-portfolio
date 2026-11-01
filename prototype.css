@@ -67,6 +67,17 @@ dialog .close{padding:0;min-width:38px;min-height:38px;flex-shrink:0;line-height
 
 /* Category labels: black text; selected red pill retains white text. */
 .chips button{color:#151512}.chips button.active{color:#fff}
+/* A clipped preview rises into view like the marketplace reference. */
+.product-visual{background:linear-gradient(135deg,#f1ece5,#e9e4dc)}
+.product-preview{position:absolute;left:9px;right:9px;top:22px;aspect-ratio:264/157;transform:translateY(0);transition:transform 320ms cubic-bezier(.22,.61,.36,1),box-shadow 320ms ease;border-radius:6px;box-shadow:0 3px 12px #493a2920;will-change:transform}
+.product-preview>img{display:block;width:100%;height:100%;object-fit:cover;border-radius:6px}
+.card{transition:border-color 240ms ease,box-shadow 240ms ease}
+.card:focus-within{border-color:#d4c7b7;box-shadow:0 5px 18px #4433220a}
+.card:focus-within .product-preview{transform:translateY(-12px);box-shadow:0 8px 18px #493a2926}
+@media(hover:hover) and (pointer:fine){.card:hover{border-color:#d4c7b7;box-shadow:0 5px 18px #4433220a}.card:hover .product-preview{transform:translateY(-12px);box-shadow:0 8px 18px #493a2926}}
+@media(hover:none),(pointer:coarse){.product-preview{top:10px;transition:none}.card:focus-within .product-preview{transform:none}}
+@media(prefers-reduced-motion:reduce){.product-preview,.card{transition:none}.product-preview{top:10px;will-change:auto}.card:hover .product-preview,.card:focus-within .product-preview{transform:none}}
+body.wire .product-preview>img{visibility:hidden}
 
 
 /* Give the richer exhibition artwork its own space below mobile curator copy. */
