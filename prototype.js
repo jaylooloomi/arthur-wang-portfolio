@@ -12,7 +12,7 @@ function update(){
  document.querySelectorAll('.card').forEach(card=>card.hidden=true);
  list.forEach((p,index)=>{const card=document.querySelector('[data-id="'+p.id+'"]');card.hidden=false;card.style.order=index;});
  $('#count').textContent=list.length+' 件產品';$('#empty').hidden=list.length>0;
- document.querySelectorAll('.chips button').forEach(b=>{b.classList.toggle('active',b.textContent===category);b.setAttribute('aria-pressed',String(b.textContent===category));});
+ document.querySelectorAll('.chips button').forEach(b=>{b.classList.toggle('active',(b.dataset.category||b.textContent)===category);b.setAttribute('aria-pressed',String((b.dataset.category||b.textContent)===category));});
 }
 categories.forEach(c=>{const b=document.createElement('button');b.textContent=c;b.onclick=()=>{category=c;update();};$('#categories').append(b);});
 $('#search').oninput=()=>{$('#global-search').value=$('#search').value;update();};

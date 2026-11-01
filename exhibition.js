@@ -31,7 +31,7 @@ document.getElementById('detail').addEventListener('click',event=>{
  document.getElementById('detail').close();
  document.getElementById('reset').click();
  const target=exhibitions[activeExhibition].category;
- [...document.querySelectorAll('.chips button')].find(b=>b.textContent===target).click();
+ [...document.querySelectorAll('.chips button')].find(b=>(b.dataset.category||b.textContent)===target).click();
  document.getElementById('products').scrollIntoView();
 });
 selectExhibition(0);
