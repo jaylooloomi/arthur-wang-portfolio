@@ -1,7 +1,7 @@
 (() => {
  const originals=JSON.parse(JSON.stringify(products));
  const originalExhibitions=JSON.parse(JSON.stringify(exhibitions));
- const zh=['所有產品','主題展覽','關於','搜尋產品、主題或關鍵字…','全站搜尋','查看搜尋結果','把時間，<br>留給值得<br><span class="red">親自做的事。</span>','從開發、會議到日常工作，用我做的開源工具，少一點重複，多一點創造。','探索所有產品','主題展覽','策展人','進入展覽','探索產品','搜尋你需要的工具…','搜尋產品','全部','AI 開發','生產力','桌面工具','精選順序','類別排序','名稱排序','產品排序','找不到符合的產品。','清除搜尋與分類','關閉詳情','開源','開啟產品','查看 GitHub','下載產品','它能幫你做什麼','適合這些時候','如何開始使用','支援平台與使用條件','原始產品圖片與歷版主視覺','閱讀完整安裝與使用說明','商品展示圖 · 參考 README 原圖生成，非實際介面截圖','內容依作者 README 整理 · 功能與安裝方式以來源文件及實際版本為準。','關於有空製造所','由 Arthur Wang 製作的開源工具，從 AI 開發、會議紀錄到桌面陪伴，讓工具接手重複工作，把時間留給值得親自做的事。','產品主視覺參考各 README 的原始圖片生成；詳情同時保留來源圖片與使用說明。','瀏覽展出作品','章魚策展人與產品展品','選擇主題展覽','另開分頁查看','產品情境示意圖，參考 README 原圖生成','件產品','產品資料來自作者的 GitHub README；卡片主視覺為參考原圖生成的情境插畫。','語言'];
+ const zh=['所有產品','主題展覽','關於','搜尋產品、主題或關鍵字…','全站搜尋','查看搜尋結果','把時間，<br>留給值得<br><span class="red">親自做的事。</span>','從開發、會議到日常工作，用我做的數位工具，少一點重複，多一點創造。','探索所有產品','主題展覽','策展人','進入展覽','探索產品','搜尋你需要的工具…','搜尋產品','全部','AI 開發','生產力','桌面工具','精選順序','類別排序','名稱排序','產品排序','找不到符合的產品。','清除搜尋與分類','關閉詳情','開源','開啟產品','查看 GitHub','下載產品','它能幫你做什麼','適合這些時候','如何開始使用','支援平台與使用條件','原始產品圖片與歷版主視覺','閱讀完整安裝與使用說明','商品展示圖 · 參考 README 原圖生成，非實際介面截圖','內容依作者 README 整理 · 功能與安裝方式以來源文件及實際版本為準。','關於有空製造所','由 Arthur Wang 製作的數位工具，從 AI 開發、會議紀錄到桌面陪伴，讓工具接手重複工作，把時間留給值得親自做的事。','產品主視覺採用專案原圖或參考原圖生成的插畫；詳情保留來源圖片與使用說明。','瀏覽展出作品','章魚策展人與產品展品','選擇主題展覽','另開分頁查看','產品情境示意圖，參考 README 原圖生成','件產品','產品資料來自作者的 GitHub README；卡片主視覺為參考原圖生成的情境插畫。','語言'];
  let locale='zh-TW';
  const t=i=>locale==='zh-TW'?zh[i]:window.PORTFOLIO_LOCALES[locale].ui[i];
  const control=document.createElement('select');control.id='language';
@@ -24,7 +24,7 @@
  function setLanguage(next,persist=true){
   locale=Object.hasOwn(window.PORTFOLIO_LOCALES,next)?next:'zh-TW';
   document.documentElement.lang=locale==='zh-TW'?'zh-Hant':locale;control.value=locale;control.setAttribute('aria-label',t(48));
-  document.title='有空製造所 — Arthur Wang'+(locale==='zh-TW'?' 的開源產品展覽':locale==='en'?' · Open-source collection':locale==='ja'?' · オープンソース作品集':' · 오픈 소스 작품집');
+  document.title='有空製造所 — Arthur Wang'+(locale==='zh-TW'?' 的數位產品展覽':locale==='en'?' · Digital tools collection':locale==='ja'?' · デジタルツール作品集':' · 디지털 도구 작품집');
   const meta=document.querySelector('meta[name="description"]');if(meta)meta.content=t(7);
   if(persist){try{localStorage.setItem('portfolio-language',locale);}catch{}const url=new URL(location.href);url.searchParams.set('lang',locale);history.replaceState(null,'',url);}
   document.querySelectorAll('nav a').forEach((el,i)=>el.textContent=t(i));
@@ -46,8 +46,8 @@
    Object.assign(p,originals[i],locale==='zh-TW'?{}:window.PRODUCT_LOCALES[locale][i]);
    p.gallery=originals[i].gallery.map((g,j)=>({...g,caption:locale==='zh-TW'?g.caption:p.captions[j]}));
    const card=document.querySelector('[data-id="'+p.id+'"]');
-   card.querySelector('.card-copy>p').textContent=p.description;card.querySelector('.product-highlight>span:last-child').textContent=p.highlight;
-   card.querySelector('.product-badge').textContent=t(26);card.querySelector('img').alt=p.name+' — '+t(45);
+   card.querySelector('h3').textContent=p.name;card.querySelector('.card-copy>p').textContent=p.description;card.querySelector('.product-highlight>span:last-child').textContent=p.highlight;
+   card.querySelector('.product-badge').textContent=p.license===null?p.badge:t(26);card.querySelector('img').alt=p.name+' — '+(p.imageAlt||t(45));
    card.querySelectorAll('.tag').forEach((tag,j)=>tag.textContent='#'+p.tags[j]);
    card.querySelector('.open').innerHTML=t(27)+' <span aria-hidden="true">→</span>';card.querySelector('.open').setAttribute('aria-label',t(27)+': '+p.name);
    card.querySelector('.card-github').setAttribute('aria-label',p.name+' GitHub ↗');card.querySelector('.card-github').title=t(28);

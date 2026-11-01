@@ -231,6 +231,141 @@ window.PORTFOLIO_DATA = {
         }
       ],
       "highlight": "每個新功能都能獨立開關與移除，先試用，再決定留下。"
+    },
+    {
+      "category": "生產力",
+      "badge": "私有專案",
+      "license": null,
+      "sourceLabel": "私有專案 · 本機部署",
+      "githubUrl": "https://github.com/jaylooloomi/marketplace-contract-ocr-ai",
+      "downloadUrl": null,
+      "platform": "Docker Desktop（Linux containers）＋瀏覽器",
+      "requirements": "需要私有 repo 存取權與 Docker Desktop（Linux containers）。依 README 設定 .env 與 DB_PASSWORD，以 docker compose up -d --build 啟動；首次建置需下載 OCR 模型。",
+      "imageCaption": "產品功能示意插畫，非實際介面截圖。",
+      "imageAlt": "產品功能示意插畫",
+      "sourceCommit": "350907b7f698f2f19783155e5827511d41f84b85",
+      "id": "contract-redact",
+      "name": "隱約處理",
+      "description": "逐項確認文件中的敏感資訊，補上手動遮蔽，再建立新的遮蔽 PDF。",
+      "highlight": "保留原檔，人工覆核後另建遮蔽 PDF；通過輸出驗證才開放下載。",
+      "tags": [
+        "PDF 遮蔽",
+        "敏感資訊",
+        "人工覆核"
+      ],
+      "features": [
+        "以本機 OCR 與規則偵測敏感資訊候選，逐項確認、略過或復原，並可手動框選。",
+        "原頁預覽與遮蔽清單對照，保留人工判定與輸出紀錄。",
+        "另建影像式遮蔽 PDF；通過輸出驗證且未失效的版本才可下載，原始檔不被覆寫。"
+      ],
+      "scenarios": [
+        "分享合約或文件前，逐頁核對需要遮蔽的姓名、公司與敏感欄位。",
+        "自動候選不完整或掃描品質不佳時，回看原文並補上手動遮蔽。"
+      ],
+      "steps": [
+        "依 README 啟動完整本機服務，開啟 http://127.0.0.1:8380 並使用「示範登入」。",
+        "進入「隱約處理」上傳 PDF，完成分析後逐項覆核；需要時手動框選。",
+        "待確認項目清零後進入最終檢查，建立新 PDF，確認驗證通過後下載。"
+      ],
+      "notes": "目前為私有專案的本機示範版本，使用開發用替代身分，並非正式 Google 登入。偵測基於本機 OCR 與規則，未接入 LLM；沒有候選不代表沒有敏感資訊，輸出前仍需人工核對。",
+      "gallery": [
+        {
+          "image": "products/sources/contract-redact-screenshot.png",
+          "caption": "Repo 實際隱約處理審核畫面；使用合成測試文件，非真實客戶資料。"
+        }
+      ],
+      "order": 6,
+      "image": "products/contract-redact.png"
+    },
+    {
+      "category": "生產力",
+      "badge": "私有專案",
+      "license": null,
+      "sourceLabel": "私有專案 · 本機部署",
+      "githubUrl": "https://github.com/jaylooloomi/marketplace-contract-ocr-ai",
+      "downloadUrl": null,
+      "platform": "Docker Desktop（Linux containers）＋瀏覽器",
+      "requirements": "需要私有 repo 存取權與 Docker Desktop（Linux containers）。依 README 設定 .env 與 DB_PASSWORD，以 docker compose up -d --build 啟動；首次建置需下載 OCR 模型。",
+      "imageCaption": "產品功能示意插畫，非實際介面截圖。",
+      "imageAlt": "產品功能示意插畫",
+      "sourceCommit": "350907b7f698f2f19783155e5827511d41f84b85",
+      "id": "contract-signback",
+      "name": "回簽比對",
+      "description": "對照核准原稿與回簽件，從差異清單、頁面配對一路核對到雙方原文。",
+      "highlight": "把回簽變更連回原文證據，區分真正差異、預期填寫與仍需追問的項目。",
+      "tags": [
+        "回簽比對",
+        "原文證據",
+        "審閱紀錄"
+      ],
+      "features": [
+        "上傳核准原稿與回簽件，透過差異清單和頁面配對確認變更、缺頁或多頁。",
+        "查看雙方原文片段與頁面證據，對照差異後再儲存人工判定及備註。",
+        "以確認差異、預期填寫、誤報、無法判定或需追問記錄覆核；未解項保留可見。"
+      ],
+      "scenarios": [
+        "收到客戶回簽件後，核對是否修改條文或新增、移除頁面。",
+        "掃描件或重新排版造成判讀疑慮時，回看雙方原頁並留下待追問事項。"
+      ],
+      "steps": [
+        "依 README 啟動本機服務並示範登入，進入「回簽比對」。",
+        "分別上傳核准原稿與回簽件，等候 OCR／比對後開啟差異清單。",
+        "逐項查看雙方證據、儲存判定與備註，從審閱紀錄回查；未解項繼續追蹤。"
+      ],
+      "notes": "目前為私有專案的本機示範版本；本機 OCR 與規則比對，未接入 LLM。回簽報告仍在規劃中，沒有可下載的回簽報告。未偵測差異只涵蓋可判讀範圍，不代表文件完全相同，也不驗證簽名真偽。",
+      "gallery": [
+        {
+          "image": "products/sources/contract-signback-screenshot.png",
+          "caption": "Repo 實際回簽比對差異審閱畫面；使用合成測試文件，非真實客戶資料。"
+        }
+      ],
+      "order": 7,
+      "image": "products/contract-signback.png"
+    },
+    {
+      "category": "生產力",
+      "badge": "私有專案",
+      "license": null,
+      "sourceLabel": "私有專案 · 本機部署",
+      "githubUrl": "https://github.com/jaylooloomi/marketplace-contract-ocr-ai",
+      "downloadUrl": null,
+      "platform": "Docker Desktop（Linux containers）＋瀏覽器",
+      "requirements": "需要私有 repo 存取權與 Docker Desktop（Linux containers）。依 README 設定 .env 與 DB_PASSWORD，以 docker compose up -d --build 啟動；首次建置需下載 OCR 模型。",
+      "imageCaption": "產品功能示意插畫，非實際介面截圖。",
+      "imageAlt": "產品功能示意插畫",
+      "sourceCommit": "350907b7f698f2f19783155e5827511d41f84b85",
+      "id": "contract-quote",
+      "name": "合約對核准報價",
+      "description": "以最後核准報價為基準，核對正式合約的品項、金額、付款與交貨條件。",
+      "highlight": "差異欄位可定位雙方原文，連同核准依據與人工判定保存為獨立 JSON 報告。",
+      "tags": [
+        "報價核對",
+        "欄位比對",
+        "JSON 報告"
+      ],
+      "features": [
+        "明確指定最後核准報價與正式合約，搭配核准單號、核准人與日期保留比較依據。",
+        "按品項、付款、交貨等欄位查看差異，定位雙方原頁與證據，保留低信心及不可直接比較狀態。",
+        "儲存人工判定、備註與歷程，建立含文件版本、未解項與 SHA-256 的獨立 JSON 報告。"
+      ],
+      "scenarios": [
+        "正式合約送簽前，核對品項、數量、單價與核准報價是否有落差。",
+        "需回查商務條件來源或交接覆核工作時，保留證據、判定與報告版本。"
+      ],
+      "steps": [
+        "依 README 啟動本機服務並示範登入，進入「合約對核准報價」。",
+        "分別上傳最後核准報價及正式合約，填入核准依據後開始分析。",
+        "從差異表查看原文證據並逐項判定，保存 JSON 報告，核對未解項與檔案雜湊。"
+      ],
+      "notes": "目前為私有專案的本機示範版本，以本機 OCR 與規則解析，未接入 LLM。未填核准單號時顯示「基準未確認」；保存報告不等於覆核完成，也不代表系統代為核准合約。",
+      "gallery": [
+        {
+          "image": "products/sources/contract-quote-screenshot.png",
+          "caption": "Repo 實際品項差異表與原文證據畫面；使用合成測試文件，非真實客戶資料。"
+        }
+      ],
+      "order": 8,
+      "image": "products/contract-quote.png"
     }
   ]
 };
