@@ -1,6 +1,6 @@
 // Curated collections of the author's five real open-source products.
 const exhibitions=[
- {number:'01',title:'生成的形狀',english:'The Next Form',subtitle:'當創意遇上生成時代，\n我們如何重新定義「作品」？',curator:'Arthur Wang',note:'從自動開發、會議記錄到桌面工具，\n本次展覽精選 5 件讓想法走進日常的\n開源產品。',category:'全部'},
+ {number:'01',title:'讓工具接手',english:'Made for Your Day',subtitle:'當重複的事交給工具，\n你想把時間留給什麼？',curator:'Arthur Wang',note:'從夜間開發、會議紀錄到桌面陪伴，\n五件源自真實需求的開源作品，\n讓日常工作，多一點從容。',category:'全部'},
  {number:'02',title:'留給重要的事',english:'Time Well Spent',subtitle:'讓工具整理日常，\n為真正重要的事留一點空間。',curator:'Arthur Wang',note:'從會議紀錄到任務素材整理，\n探索數位工具如何讓工作更從容。\n本展收錄 2 件生產力作品。',category:'生產力'},
  {number:'03',title:'桌邊的陪伴',english:'A Little Companion',subtitle:'把額度收進桌面小島，\n讓小夥伴陪你安排工作節奏。',curator:'Arthur Wang',note:'一眼掌握多個 AI 服務的額度，\n留一點空間給專注，也給休息。\n本展收錄 Quota Pebble。',category:'桌面工具'}
 ];

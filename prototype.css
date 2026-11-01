@@ -83,3 +83,6 @@ body.wire .product-preview>img{visibility:hidden}
 /* Give the richer exhibition artwork its own space below mobile curator copy. */
 @media(max-width:480px){.feature{min-height:470px}.feature>.exhibition-art{height:230px}}
 
+
+#exhibition-panel[aria-labelledby=exhibition-tab-0] #exhibition-english{font-size:4.5cqw}.exhibition-motto{font-size:1.3cqw}@media(max-width:480px){#exhibition-panel[aria-labelledby=exhibition-tab-0] #exhibition-english{font-size:25px}.exhibition-motto{font-size:8px}}
+
