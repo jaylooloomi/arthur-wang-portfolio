@@ -61,4 +61,7 @@
  const requested=new URLSearchParams(location.search).get('lang');
  setLanguage(requested||saved||'zh-TW',false);
  window.portfolioI18n={setLanguage,get locale(){return locale;},translateTree};
+ // Exhibition links open the matching localized product detail, using known IDs only.
+ const requestedProduct=new URLSearchParams(location.search).get('product');
+ if(requestedProduct){const product=products.find(p=>p.id===requestedProduct);if(product)productDetails(product);}
 })();
